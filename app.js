@@ -1,6 +1,10 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const token = process.env.DISCORD_BOT_TOKEN;
+const discord = require('discord.js');
+const express = require('express');
+
+const TOKEN = process.env.DISCORD_BOT_TOKEN;
+const PORT = process.env.PORT || 5000;
+
+const client = new discord.Client();
 const prefix = '!';
 
 client.on('ready', () => {
@@ -63,7 +67,7 @@ client.on('message', async msg => {
       index++;
     }
 
-    let infos = [];
+    let infos = [`ボイスチャンネル ${channelName} のメンバーを ${teamCount} チームに振り分けます`];
     for (let i = 0; i < teamCount; i++) {
       infos.push(`チーム${i + 1}:` + teams[i].map(m => m.nickname || m.displayName).join(','));
     }
@@ -72,4 +76,8 @@ client.on('message', async msg => {
   }
 })
 
-client.login(token);
+client.login(TOKEN);
+
+express()
+  .get('/', (req, res) => res.status(200).send("Express!!"))
+  .listen(PORT, () => console.log(`Listening on ${PORT}`));
