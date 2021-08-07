@@ -1,4 +1,4 @@
-# nazo-gm
+# nazo-bot
 
 Discordに集まって謎解きに挑戦する際の各種雑務を行うためのボット
 
@@ -27,13 +27,14 @@ Discordに集まって謎解きに挑戦する際の各種雑務を行うため�
 1. 本リポジトリをローカル環境にCloneする。
 2. VSCode の `Remote Containers` で開く。
 3. 下記コマンドで起動する。
+    - `npm install`
     - `DISCORD_BOT_TOKEN={トークン} node app.js`
     - `{トークン}` は [Discord Developer Portal](https://discord.com/developers/applications)からコピーした値に置き換えること。
         - アプリケーションの `Bot` メニュー内の `TOKEN` を参照
 
 ## 本番環境
 
-- [heroku](https://dashboard.heroku.com/apps/nazo-gm)にて常時稼働中。
+- [heroku](https://dashboard.heroku.com/apps/nazo-bot)にて常時稼働中。
     - 一定時間アクセスがない場合は自動停止する。
-    - 停止中の場合、[ボットの起動ページ](https://nazo-gm.herokuapp.com/)にアクセスして立ち上げる必要がある。
+    - 停止中の場合、[ボットの起動ページ](https://nazo-bot.herokuapp.com/)にアクセスして立ち上げる必要がある。
     - masterブランチが更新されると自動デプロイされる。

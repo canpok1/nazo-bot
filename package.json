@@ -1,5 +1,5 @@
 {
-  "name": "nazo-gm",
+  "name": "nazo-bot",
   "version": "0.0.0",
   "description": "謎解きイベントの雑務をこなすボット",
   "main": "app.js",

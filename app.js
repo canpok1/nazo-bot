@@ -79,5 +79,5 @@ client.on('message', async msg => {
 client.login(TOKEN);
 
 express()
-  .get('/', (req, res) => res.status(200).send("Express!!"))
+  .use(express.static('public'))
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
